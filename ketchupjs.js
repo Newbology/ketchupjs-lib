@@ -17,7 +17,7 @@ function save(metric, value, user_id) {
     user_id: user_id.toString()
   };
 
-  fetch('https://d3zevizvrk.execute-api.us-west-2.amazonaws.com/dev/queue', {
+  fetch('https://rdz8bth03m.execute-api.us-west-2.amazonaws.com/dev/queue', {
     method: 'post',
     body: JSON.stringify(body),
     header: { 'Content-Type': 'application/json' }
