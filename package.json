@@ -1,6 +1,6 @@
 {
   "name": "ketchupjs",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Lightweight javascript library for tracking analytical data that you care about",
   "main": "index.js",
   "scripts": {
