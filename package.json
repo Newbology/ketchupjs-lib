@@ -1,11 +1,28 @@
 {
-  "name": "ketchupjs-lib",
+  "name": "ketchupjs",
   "version": "1.0.0",
-  "description": "",
+  "description": "Lightweight javascript library for tracking analytical data that you care about",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Kevin Tauzer, Brad McKinney, Tyler McFarland",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^2.3.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Newbology/ketchupjs-lib.git"
+  },
+  "keywords": [
+    "data",
+    "analytics",
+    "javascript"
+  ],
+  "bugs": {
+    "url": "https://github.com/Newbology/ketchupjs-lib/issues"
+  },
+  "homepage": "https://github.com/Newbology/ketchupjs-lib#readme"
 }
