@@ -7,6 +7,9 @@ function config(key) {
 }
 
 function save(metric, value, user_id) {
+  if(!user_id){
+    user_id = 0
+  }
   const body = {
     key: configObj.key,
     metric: metric,
