@@ -1,9 +1,9 @@
 # KetchupJS
-Our target is to make it easier for both large and small business owners to record analytical data. We created a library to use in your app to do that. Just use our library you want to record a piece of data in your code base, and view your analytics at <a href="ketchupjs.dev">ketchupjs.dev</a>.
+Our target is to make it easier for both large and small business owners to record analytical data. We created a library to use in your app to do that. Just use our library you want to record a piece of data in your code base, and view your analytics at <a href="http://www.ketchupjs.dev">ketchupjs.dev</a>.
 
 
 ## Quick Start
-First, signup at <a href="ketchupjs.dev">ketchupjs.dev</a> you will recieve a secret **Api Key** in order to use our service. **DO NOT** share this with anyone else.
+First, signup at <a href="https://www.ketchupjs.dev">ketchupjs.dev</a> you will recieve a secret **Api Key** in order to use our service. **DO NOT** share this with anyone else.
 
 
 After signing up and getting your **Api Key** run 
@@ -46,7 +46,7 @@ You can assign the recorded event to a certain user by specifying their **user_n
 ```
 ketchup.save("sales", 2.49, "User1")
 ```
-By setting **public** to false you can prevent anyone from viewing this data through our service at <a href="ketchupjs.dev">ketchupjs.dev</a> (defaulted to true, this can be changed in your profile settings). 
+By setting **public** to false you can prevent anyone from viewing this data through our service at <a href="http://www.ketchupjs.dev">ketchupjs.dev</a> (defaulted to true, this can be changed in your profile settings). 
 ```
 ketchup.save("sales", 2.49, "User1", false)
 ```
