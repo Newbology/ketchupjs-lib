@@ -1,6 +1,5 @@
 const fetch = require('node-fetch');
-//in development put your api gateway here
-const lambda = '';
+const lambda = 'https://xavdozcie4.execute-api.us-west-2.amazonaws.com/dev/queue';
 let configObj = {};
 
 function config(key) {
