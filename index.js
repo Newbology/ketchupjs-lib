@@ -7,7 +7,7 @@ function config(key) {
   configObj.key = key;
 }
 
-function save(metric, value, user_name) {
+function save(metric, value, user_name, public) {
   if (typeof metric !== 'string') {
     throw `Metric needs to be a String, Input receieved was a ${typeof metric}`;
   }
@@ -20,12 +20,16 @@ function save(metric, value, user_name) {
   if (typeof user_name !== 'string') {
     throw `user_name needs to be a String, Input receieved was a ${typeof user_name}`;
   }
+  if (public && typeof public !== boolean) {
+    throw `Public needs to be a boolean, Input receieved was a ${typeof public}`;
+  }
 
   const body = {
     key: configObj.key,
     metric: metric,
     value: value.toString(),
-    user_name: user_name
+    user_name: user_name,
+    public: public
   };
 
   fetch(lambda, {
@@ -43,7 +47,7 @@ function save(metric, value, user_name) {
     });
 }
 
-function most(metric, value, user_name) {
+function most(metric, value, user_name, public) {
   if (typeof metric !== 'string') {
     throw `Metric needs to be a String, Input receieved was a ${typeof metric}`;
   }
@@ -56,11 +60,15 @@ function most(metric, value, user_name) {
   if (typeof user_name !== 'string') {
     throw `user_name needs to be a String, Input receieved was a ${typeof user_name}`;
   }
+  if (public && typeof public !== boolean) {
+    throw `Public needs to be a boolean, Input receieved was a ${typeof public}`;
+  }
   const body = {
     key: configObj.key,
     metric: metric,
     value: value.toString(),
     user_name: user_name,
+    public: public,
     most: true
   };
   fetch(lambda, {
