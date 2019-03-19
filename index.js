@@ -1,12 +1,13 @@
 const fetch = require('node-fetch');
-const lambda = 'https://xavdozcie4.execute-api.us-west-2.amazonaws.com/dev/queue';
+const lambda =
+  'https://qzhilsv8a2.execute-api.us-west-2.amazonaws.com/default/SQS-dev-queue';
 let configObj = {};
 
 function config(key) {
   configObj.key = key;
 }
 
-function save(metric, value, user_name, public) {
+function save(metric, value, user_name, privacy) {
   if (typeof metric !== 'string') {
     throw `Metric needs to be a String, Input receieved was a ${typeof metric}`;
   }
@@ -19,8 +20,8 @@ function save(metric, value, user_name, public) {
   if (typeof user_name !== 'string') {
     throw `user_name needs to be a String, Input receieved was a ${typeof user_name}`;
   }
-  if (public && typeof public !== boolean) {
-    throw `Public needs to be a boolean, Input receieved was a ${typeof public}`;
+  if (privacy && typeof privacy !== boolean) {
+    throw `privacy needs to be a boolean, Input receieved was a ${typeof privacy}`;
   }
 
   const body = {
@@ -28,7 +29,7 @@ function save(metric, value, user_name, public) {
     metric: metric,
     value: value.toString(),
     user_name: user_name,
-    public: public
+    privacy: privacy
   };
 
   fetch(lambda, {
@@ -42,11 +43,11 @@ function save(metric, value, user_name, public) {
       }
     })
     .catch(err => {
-      throw err;
+      console.log(err.message)
     });
 }
 
-function most(metric, value, user_name, public) {
+function most(metric, value, user_name, privacy) {
   if (typeof metric !== 'string') {
     throw `Metric needs to be a String, Input receieved was a ${typeof metric}`;
   }
@@ -59,15 +60,15 @@ function most(metric, value, user_name, public) {
   if (typeof user_name !== 'string') {
     throw `user_name needs to be a String, Input receieved was a ${typeof user_name}`;
   }
-  if (public && typeof public !== boolean) {
-    throw `Public needs to be a boolean, Input receieved was a ${typeof public}`;
+  if (privacy && typeof privacy !== boolean) {
+    throw `privacy needs to be a boolean, Input receieved was a ${typeof privacy}`;
   }
   const body = {
     key: configObj.key,
     metric: metric,
     value: value.toString(),
     user_name: user_name,
-    public: public,
+    privacy: privacy,
     most: true
   };
   fetch(lambda, {
@@ -81,7 +82,7 @@ function most(metric, value, user_name, public) {
       }
     })
     .catch(err => {
-      throw err;
+      console.log(err.message);
     });
 }
 

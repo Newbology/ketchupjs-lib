@@ -54,10 +54,10 @@ ketchup.save("sales", 2.49, "User1", false)
 ```
 ketchup.most("daily_spending", 4.92, "User1", false)
 ```
-Ex. if **daily_spending** was greater than the **value** in database, the event would be recorded, but if it were less than the **value** it would not be recorded:
+Ex. if the **value** of **daily_spending** was greater than the **valueStored**, the event would be recorded, but if it were less than the **valueStored** it would not be recorded:
 ```
-if(value > valueInDb) {
-  valueInDb = value
+if(value > valueStored) {
+  valueStored = value
 };
 ```
 
